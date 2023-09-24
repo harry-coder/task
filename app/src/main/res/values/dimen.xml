@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Card margins -->
+    <dimen name="card_section_top_margin">20dp</dimen>
+
+    <!-- zig zag view default dimensions -->
+    <dimen name="pin_height">4dp</dimen>
+    <dimen name="pin_width">6dp</dimen>
+
+    <!-- coupon item views -->
+    <!-- recents header dot dimen -->
+    <!-- login screen dimensions -->aru
+
+    <dimen name="login_item_left_padding">18dp</dimen>
+    <!-- floating buttons size -->
+    <dimen name="payment_recharge_info_height">190dp</dimen>
+    <dimen name="payment_views_height">44dp</dimen>
+    <dimen name="payment_views_height_keyboard">49dp</dimen>
+    <dimen name="profile_pic_dimen">72dp</dimen>
+
+    <!-- home fragmentAll account info layout -->
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin_8dp">8dp</dimen>
+
+    <!-- snackbar padding -->
+    <dimen name="snackbar_top_top_padding">-5dp</dimen>
+    <dimen name="snackbar_top_bottom_padding">-5dp</dimen>
+    <!--get started -->
+    <dimen name="account_margin">-3dp</dimen>
+
+    <!--add money rupee dimens-->
+    <dimen name="add_money_rupee_dimen">31dp</dimen>
+
+    <dimen name="payment_pic_dimen">55dp</dimen>
+
+
+    <!--month picker //amit !-->
+    <dimen name="month_item_padding_top">7dp</dimen>
+    <dimen name="month_item_padding_left">3dp</dimen>
+
+    <!--month picker //amit !-->
+
+    <!--freecharge main fragmentAll !-->
+    <!-- freecharge main fragmentAll ends !-->
+
+
+    <!--withdraw money frag !-->
+
+    <dimen name="no_withdraw_money_height">280dp</dimen>
+    <dimen name="no_withdraw_tv_margin_top">20dp</dimen>
+
+
+    <!--payment option frag!-->
+    <dimen name="payment_option_frag_promo_margin">8dp</dimen>
+
+    <!--new account frag!-->
+    <dimen name="kyc_icon_dimen">15dp</dimen>
+    <dimen name="kyc_icon_margin">5dp</dimen>
+    <dimen name="kyc_progress_dimen">18dp</dimen>
+    <!--Bottom up dialogue!-->
+    <dimen name="header_line_margin">12dp</dimen>
+    <dimen name="bottom_dialogue_close_iv_marginTop">14dp</dimen>
+    <dimen name="bottom_dialogue_iv_marginTop">40dp</dimen>
+    <dimen name="footer_hyper_link_margin">5dp</dimen>
+    <dimen name="bullets_description_margin">8dp</dimen>
+
+
+    <!-- no_permission!-->
+    <dimen name="access_text_margin_top">24dp</dimen>
+    <dimen name="access_sub_text_margin_left">32dp</dimen>
+    <dimen name="enable_button_margin_top">35dp</dimen>
+    <dimen name="enable_button_padding">38dp</dimen>
+    <dimen name="enable_button_height">37dp</dimen>
+    <dimen name="choose_option_padding_top">5dp</dimen>
+    <dimen name="choose_option_padding_left">30dp</dimen>
+    <dimen name="permission_common_margin">18dp</dimen>
+
+    <dimen name="or_dash_width">24dp</dimen>
+    <dimen name="or_dash_height">0.5dp</dimen>
+
+    <dimen name="icon_height">60dp</dimen>
+    <dimen name="icon_width">49dp</dimen>
+
+    <dimen name="icon_layout_padding_left">20dp</dimen>
+    <dimen name="icon_layout_padding_top">15dp</dimen>
+
+
+    <dimen name="kyc_btn_corner_radius">4dp</dimen>
+
+
+    <!-- Payment Fragment !-->
+    <dimen name="payment_tab_min_width">20dp</dimen>
+
+
+    <!-- Deals Fragment !-->
+    <!--DealsLocation Fragment!-->
+    <dimen name="deals_location_margin">40dp</dimen>
+    <!-- transcation history refund !-->
+    <dimen name="date_text_margin_top">8dp</dimen>
+
+
+    <!--
+Refer to App Widget Documentation for margin information
+http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
+    -->
+    <dimen name="text_default">18sp</dimen>
+    <dimen name="text_xxlarge">26sp</dimen>
+    <dimen name="text_xlarge">22sp</dimen>
+    <dimen name="text_extra_large">20sp</dimen>
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_medium_15dp">15sp</dimen>
+    <dimen name="text_small_13dp">13sp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_xsmall">12sp</dimen>
+    <dimen name="text_xxsmall">10sp</dimen>
+    <dimen name="text_xxxsmall">9sp</dimen>
+    <dimen name="text_title_small">11sp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="default_stroke_width">7dp</dimen>
+    <dimen name="default_background_stroke_width">3dp</dimen>
+
+
+    <dimen name="_12_dp">12dp</dimen>
+
+    <!--TODO to remove irrelevant dps-->
+    <dimen name="_minus_5sdp">-5.00dp</dimen>
+    <dimen name="_minus_10sdp">-10.00dp</dimen>
+    <dimen name="_0sdp">0.00dp</dimen>
+    <dimen name="_0.1sdp">0.10dp</dimen>
+    <dimen name="_0.3sdp">0.30dp</dimen>
+    <dimen name="_half_sdp">0.5dp</dimen>
+    <dimen name="_point_seven_sdp">0.7dp</dimen>
+    <dimen name="_1sdp">1.00dp</dimen>
+    <dimen name="_2sdp">2.00dp</dimen>
+    <dimen name="_3sdp">3.00dp</dimen>
+    <dimen name="_4sdp">4.00dp</dimen>
+    <dimen name="_5sdp">5.00dp</dimen>
+    <dimen name="_6sdp">6.00dp</dimen>
+    <dimen name="_7sdp">7.00dp</dimen>
+    <dimen name="_8sdp">8.00dp</dimen>
+    <dimen name="_8_and_half_sdp">8.50dp</dimen>
+    <dimen name="_9sdp">9.00dp</dimen>
+    <dimen name="_10sdp">10.00dp</dimen>
+    <dimen name="_negative10sdp">-10.00dp</dimen>
+    <dimen name="_10_and_half_sdp">10.50dp</dimen>
+    <dimen name="_11sdp">11.00dp</dimen>
+    <dimen name="_12sdp">12.00dp</dimen>
+    <dimen name="_12_and_half_sdp">12.50dp</dimen>
+    <dimen name="_13sdp">13.00dp</dimen>
+    <dimen name="_14sdp">14.00dp</dimen>
+    <dimen name="_15sdp">15.00dp</dimen>
+    <dimen name="_16sdp">16.00dp</dimen>
+    <dimen name="_17sdp">17.00dp</dimen>
+    <dimen name="_18sdp">18.00dp</dimen>
+    <dimen name="_19sdp">19.00dp</dimen>
+    <dimen name="_20sdp">20.00dp</dimen>
+    <dimen name="_21sdp">21.00dp</dimen>
+    <dimen name="_22sdp">22.00dp</dimen>
+    <dimen name="_23sdp">23.00dp</dimen>
+    <dimen name="_24sdp">24.00dp</dimen>
+    <dimen name="_25sdp">25.00dp</dimen>
+    <dimen name="_26sdp">26.00dp</dimen>
+    <dimen name="_27sdp">27.00dp</dimen>
+    <dimen name="_28sdp">28.00dp</dimen>
+    <dimen name="_29sdp">29.00dp</dimen>
+    <dimen name="_30sdp">30.00dp</dimen>
+    <dimen name="_31sdp">31.00dp</dimen>
+    <dimen name="_32sdp">32.00dp</dimen>
+    <dimen name="_33sdp">33.00dp</dimen>
+    <dimen name="_34sdp">34.00dp</dimen>
+    <dimen name="_35sdp">35.00dp</dimen>
+    <dimen name="_36sdp">36.00dp</dimen>
+    <dimen name="_37sdp">37.00dp</dimen>
+    <dimen name="_38sdp">38.00dp</dimen>
+    <dimen name="_39sdp">39.00dp</dimen>
+    <dimen name="_40sdp">40.00dp</dimen>
+    <dimen name="_41sdp">41.00dp</dimen>
+    <dimen name="_42sdp">42.00dp</dimen>
+    <dimen name="_43sdp">43.00dp</dimen>
+    <dimen name="_44sdp">44.00dp</dimen>
+    <dimen name="_45sdp">45.00dp</dimen>
+    <dimen name="_46sdp">46.00dp</dimen>
+    <dimen name="_47sdp">47.00dp</dimen>
+    <dimen name="_48sdp">48.00dp</dimen>
+    <dimen name="_49sdp">49.00dp</dimen>
+    <dimen name="_50sdp">50.00dp</dimen>
+    <dimen name="_51sdp">51.00dp</dimen>
+    <dimen name="_52sdp">52.00dp</dimen>
+    <dimen name="_53sdp">53.00dp</dimen>
+    <dimen name="_54sdp">54.00dp</dimen>
+    <dimen name="_55sdp">55.00dp</dimen>
+    <dimen name="_56sdp">56.00dp</dimen>
+    <dimen name="_57sdp">57.00dp</dimen>
+    <dimen name="_58sdp">58.00dp</dimen>
+    <dimen name="_59sdp">59.00dp</dimen>
+    <dimen name="_60sdp">60.00dp</dimen>
+    <dimen name="_61sdp">61.00dp</dimen>
+    <dimen name="_62sdp">62.00dp</dimen>
+    <dimen name="_63sdp">63.00dp</dimen>
+    <dimen name="_64sdp">64.00dp</dimen>
+    <dimen name="_65sdp">65.00dp</dimen>
+    <dimen name="_66sdp">66.00dp</dimen>
+    <dimen name="_67sdp">67.00dp</dimen>
+    <dimen name="_68sdp">68.00dp</dimen>
+    <dimen name="_69sdp">69.00dp</dimen>
+    <dimen name="_70sdp">70.00dp</dimen>
+    <dimen name="_72sdp">72.00dp</dimen>
+    <dimen name="_74sdp">74.00dp</dimen>
+    <dimen name="_75sdp">75.00dp</dimen>
+    <dimen name="_76sdp">76.00dp</dimen>
+    <dimen name="_80sdp">80.00dp</dimen>
+    <dimen name="_84sdp">84.00dp</dimen>
+    <dimen name="_86sdp">86.00dp</dimen>
+    <dimen name="_90sdp">90.00dp</dimen>
+    <dimen name="_92sdp">92.00dp</dimen>
+    <dimen name="_94sdp">94.00dp</dimen>
+    <dimen name="_99sdp">99.00dp</dimen>
+    <dimen name="_100sdp">100.00dp</dimen>
+    <dimen name="_104sdp">104.00dp</dimen>
+    <dimen name="_110sdp">110.00dp</dimen>
+    <dimen name="_112sdp">112.00dp</dimen>
+    <dimen name="_113sdp">113.00dp</dimen>
+    <dimen name="_115sdp">115.00dp</dimen>
+    <dimen name="_116sdp">116.00dp</dimen>
+    <dimen name="_118sdp">118.00dp</dimen>
+    <dimen name="_120sdp">120.00dp</dimen>
+    <dimen name="_123sdp">123.00dp</dimen>
+    <dimen name="_130sdp">130.00dp</dimen>
+    <dimen name="_131sdp">131.00dp</dimen>
+    <dimen name="_134sdp">134.00dp</dimen>
+    <dimen name="_140sdp">140.00dp</dimen>
+    <dimen name="_146sdp">146.00dp</dimen>
+    <dimen name="_145sdp">145.00dp</dimen>
+    <dimen name="_150sdp">150.00dp</dimen>
+    <dimen name="_154sdp">154.00dp</dimen>
+    <dimen name="_156sdp">156.00dp</dimen>
+    <dimen name="_157sdp">157.00dp</dimen>
+    <dimen name="_160sdp">160.00dp</dimen>
+    <dimen name="_175sdp">175.00dp</dimen>
+    <dimen name="_196sdp">196.00dp</dimen>
+    <dimen name="_200sdp">200.00dp</dimen>
+    <dimen name="_205sdp">205.00dp</dimen>
+    <dimen name="_180sdp">180.00dp</dimen>
+    <dimen name="_190sdp">190.00dp</dimen>
+    <dimen name="_192sdp">192.00dp</dimen>
+    <dimen name="_210sdp">210.00dp</dimen>
+    <dimen name="_310sdp">310.00dp</dimen>
+    <dimen name="_280sdp">280.00dp</dimen>
+    <dimen name="_226sdp">226.00dp</dimen>
+    <dimen name="_230sdp">230.00dp</dimen>
+    <dimen name="_220sdp">220.00dp</dimen>
+
+    <dimen name="_142sdp">142.00dp</dimen>
+    <dimen name="_158sdp">158.00dp</dimen>
+    <dimen name="_164sdp">164.00dp</dimen>
+    <dimen name="_165sdp">165.00dp</dimen>
+    <dimen name="_166sdp">166.00dp</dimen>
+    <dimen name="_170sdp">170.00dp</dimen>
+    <dimen name="_178sdp">178.00dp</dimen>
+
+    <dimen name="_184sdp">184.00dp</dimen>
+    <dimen name="_245sdp">245.00dp</dimen>
+    <dimen name="_250sdp">250.00dp</dimen>
+    <dimen name="_300sdp">300.00dp</dimen>
+    <dimen name="_306sdp">306.00dp</dimen>
+    <dimen name="_309sdp">309.00dp</dimen>
+    <dimen name="_320sdp">320.00dp</dimen>
+    <dimen name="_330sdp">330.00dp</dimen>
+    <dimen name="_360sdp">360.00dp</dimen>
+    <dimen name="_370sdp">320.00dp</dimen>
+    <dimen name="_400sdp">400.00dp</dimen>
+    <dimen name="_450sdp">450.00dp</dimen>
+    <dimen name="_550sdp">550.00dp</dimen>
+
+    <dimen name="_147dp">147dp</dimen>
+    <dimen name="_233dp">233dp</dimen>
+    <dimen name="_155dp">155dp</dimen>
+    <dimen name="_200dp">200dp</dimen>
+    <dimen name="_230dp">230dp</dimen>
+
+    <dimen name="_3ssp">3.00sp</dimen>
+    <dimen name="_5ssp">5.00sp</dimen>
+    <dimen name="_6ssp">6.00sp</dimen>
+    <dimen name="_8ssp">8.00sp</dimen>
+    <dimen name="_9ssp">9.00sp</dimen>
+    <dimen name="_10ssp">10.00sp</dimen>
+    <dimen name="_11ssp">11.00sp</dimen>
+    <dimen name="_12ssp">12.00sp</dimen>
+    <dimen name="_13ssp">13.00sp</dimen>
+    <dimen name="_14ssp">14.00sp</dimen>
+    <dimen name="_15ssp">15.00sp</dimen>
+    <dimen name="_16ssp">16.00sp</dimen>
+    <dimen name="_17ssp">17.00sp</dimen>
+    <dimen name="_18ssp">18.00sp</dimen>
+    <dimen name="_19ssp">19.00sp</dimen>
+    <dimen name="_20ssp">20.00sp</dimen>
+    <dimen name="_22ssp">22.00sp</dimen>
+    <dimen name="_24ssp">24.00sp</dimen>
+    <dimen name="_26ssp">26.00sp</dimen>
+    <dimen name="_27ssp">27.00sp</dimen>
+    <dimen name="_28ssp">28.00sp</dimen>
+    <dimen name="_30ssp">30.00sp</dimen>
+    <dimen name="_36ssp">36.00sp</dimen>
+    <dimen name="_38ssp">38.00sp</dimen>
+    <dimen name="_32ssp">32.00sp</dimen>
+    <dimen name="_44ssp">44.00sp</dimen>
+    <dimen name="_56ssp">56.00sp</dimen>
+    <dimen name="_60ssp">60.00sp</dimen>
+
+    <dimen name="_16.6ssp">16.60sp</dimen>
+    <dimen name="_6.6ssp">6.60sp</dimen>
+    <dimen name="_7.5ssp">7.50sp</dimen>
+    <dimen name="otp_view_item_size">48dp</dimen>
+    <dimen name="otp_view_item_radius">5dp</dimen>
+    <dimen name="otp_view_item_spacing">5dp</dimen>
+    <dimen name="otp_view_item_line_width">2dp</dimen>
+    <dimen name="otp_view_cursor_width">2dp</dimen>
+
+    <dimen name="super_bottom_sheet_width">0dp</dimen>
+    <dimen name="super_bottom_sheet_radius">16dp</dimen>
+    <dimen name="super_bottom_sheet_peek_height">64dp</dimen>
+    <dimen name="super_bottom_sheet_dim">0.6</dimen>
+    <dimen name="_2_and_half_sdp">2.5dp</dimen>
+    <dimen name="_point_7sdp">0.7dp</dimen>
+    <dimen name="btn_height">44dp</dimen>
+    <dimen name="_zero_sdp">0dp</dimen>
+
+    <dimen name="default_corner_radii">28dp</dimen>
+    <dimen name="default_badge_corner_radii">16dp</dimen>
+    <dimen name="default_nav_item_padding">1dp</dimen>
+    <dimen name="default_nav_item_text_size">12sp</dimen>
+    <dimen name="default_nav_item_text_padding">2dp</dimen>
+    <dimen name="default_nav_item_title_max_width">100dp</dimen>
+    <dimen name="default_icon_width">35dp</dimen>
+    <dimen name="default_icon_height">35dp</dimen>
+    <dimen name="default_mf_icon_width">33dp</dimen>
+    <dimen name="default_mf_icon_height">35dp</dimen>
+    <dimen name="default_nav_item_badge_padding">2dp</dimen>
+    <dimen name="default_nav_item_badge_text_size">7sp</dimen>
+    <dimen name="pl_offer_fragment_tnc_scroll_view_height">340dp</dimen>
+    <dimen name="padding_neo_selector_et">0dp</dimen>
+    <dimen name="neo_selector_stroke_width">0.5dp</dimen>
+    <dimen name="neo_selector_focused_stroke_width">0.7dp</dimen>
+    <dimen name="_85sdp">85dp</dimen>
+    <dimen name="_s315dp">315dp</dimen>
+    <dimen name="_s449dp">449dp</dimen>
+    <dimen name="_117sdp">117dp</dimen>
+    <dimen name="_139sdp">139dp</dimen>
+    <dimen name="_s8dp">8dp</dimen>
+    <dimen name="_s28dp">28dp</dimen>
+</resources>
