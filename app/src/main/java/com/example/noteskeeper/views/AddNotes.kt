@@ -58,6 +58,12 @@ fun AddNotes(modifier: Modifier = Modifier, viewModel: TaskViewModel, task: Task
         arrayOf("Incomplete", "Complete")
     }
 
+    val lambdaRemember = remember<(Boolean)->Unit> {
+        {
+            expanded=it
+        }
+    }
+
     var selectedItem by remember {
         mutableStateOf(
             if (task.name.isEmpty()) listItems[0] else {
@@ -65,6 +71,12 @@ fun AddNotes(modifier: Modifier = Modifier, viewModel: TaskViewModel, task: Task
             }
         )
     }
+    val lambdaRemember2 = remember<(String)->Unit> {
+        {
+            selectedItem=it
+        }
+    }
+
     var dayOfWeek by remember {
         mutableStateOf(0)
     }
@@ -81,16 +93,18 @@ fun AddNotes(modifier: Modifier = Modifier, viewModel: TaskViewModel, task: Task
     val dayOfMonth = calendar[Calendar.DAY_OF_MONTH]
 
 
-    val datePicker = DatePickerDialog(
-        context,
-        { _: DatePicker, selectedYear: Int, selectedMonth: Int, selectedDayOfMonth: Int ->
-            dayOfWeek=selectedDayOfMonth
-            monthOfYear=selectedMonth
-            yearOfCentury=selectedYear
+    val datePicker = remember {
+        DatePickerDialog(
+            context,
+            { _: DatePicker, selectedYear: Int, selectedMonth: Int, selectedDayOfMonth: Int ->
+                dayOfWeek=selectedDayOfMonth
+                monthOfYear=selectedMonth
+                yearOfCentury=selectedYear
 
-            selectedDateText = "Due Date: $selectedDayOfMonth/${selectedMonth + 1}/$selectedYear"
-        }, year, month, dayOfMonth
-    )
+                selectedDateText = "Due Date: $selectedDayOfMonth/${selectedMonth + 1}/$selectedYear"
+            }, year, month, dayOfMonth
+        )
+    }
     datePicker.datePicker.minDate = calendar.timeInMillis
 
 
@@ -185,16 +199,16 @@ fun AddNotes(modifier: Modifier = Modifier, viewModel: TaskViewModel, task: Task
         }
 
         if(task.name.isNotEmpty()){
-            ShowSpinner(
-                listItems = listItems,
-                expanded = expanded,
-                stateExpanded = { expanded = it },
-                selectedItemState = {
-                    selectedItem = it
-                },
-                selectedItemTop = selectedItem
+            Box {
+                ShowSpinner(
+                    listItems = listItems,
+                    expanded = expanded,
+                    stateExpanded = lambdaRemember,
+                    selectedItemState = lambdaRemember2,
+                    selectedItemTop = selectedItem
 
-            )
+                )
+            }
         }
 
 
@@ -279,6 +293,7 @@ fun AddNotes(modifier: Modifier = Modifier, viewModel: TaskViewModel, task: Task
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
+@Stable
 private fun ShowSpinner(
     modifier: Modifier = Modifier,
     listItems: Array<String>,

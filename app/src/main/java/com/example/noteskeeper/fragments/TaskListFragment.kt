@@ -1,5 +1,6 @@
 package com.example.noteskeeper.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,8 +18,12 @@ import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.flowWithLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.noteskeeper.R
+import com.example.noteskeeper.data.DeeplinkHandler
+import com.example.noteskeeper.data.DeeplinkHandlerImpl
 import com.example.noteskeeper.data.Task
 import com.example.noteskeeper.events.BottomSheetEvents
 import com.example.noteskeeper.taskstate.RedirectionState
@@ -31,13 +36,16 @@ import com.example.noteskeeper.views.InitialBottomSheetContent
 import com.example.noteskeeper.views.NoteItems
 import com.example.noteskeeper.views.PriorityBottomSheet
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 
 private const val TAG = "TaskListFragment"
 @AndroidEntryPoint
 class TaskListFragment : Fragment() {
 
-    val taskViewModel:TaskViewModel by activityViewModels ()
+    private val taskViewModel:TaskViewModel by viewModels ()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,6 +60,7 @@ class TaskListFragment : Fragment() {
             }
         }
     }
+
 
 
 
@@ -77,7 +86,7 @@ class TaskListFragment : Fragment() {
             sheetState = modalSheetState,
             sheetShape = RoundedCornerShape(topStart = roundedCornerRadius, topEnd = roundedCornerRadius),
             sheetContent = {
-                LoggerUtils.logVerbose(TAG,"Sheet Type 1"+sheetTypeState.sheetAction)
+               // LoggerUtils.logVerbose(TAG,"Sheet Type 1"+sheetTypeState.sheetAction)
 
                 when (sheetTypeState.sheetAction) {
                    SheetEnum.SHOW->{
@@ -114,10 +123,11 @@ class TaskListFragment : Fragment() {
 
     }
 
+     @SuppressLint("StateFlowValueCalledInComposition")
      @Composable
     fun AppContent() {
 
-         LaunchedEffect(key1 = taskViewModel.redirectionState.value ){
+         /*LaunchedEffect(key1 = taskViewModel.redirectionState.value ){
              LoggerUtils.logVerbose(TAG,"Inside state ${taskViewModel.redirectionState.value.redirectionType} ")
             val dataValue=taskViewModel.redirectionState.value
              when(dataValue.redirectionType){
@@ -134,7 +144,52 @@ class TaskListFragment : Fragment() {
                  }
 
              }
+         }*/
+
+         LaunchedEffect(key1 = true ){
+             LoggerUtils.logVerbose(TAG,"Launched Called Times")
+
+             taskViewModel.redirectionState.observe(viewLifecycleOwner){
+                 when(it.redirectionType){
+                     TaskStateEnum.REDIRECT_TO_ADD_NOTES->{
+                         LoggerUtils.logVerbose(TAG,"Called Times")
+                         navigateToAddNotes()
+                         //  taskViewModel.redirectionState.value=taskViewModel.redirectionState.value.copy(redirectionType = TaskStateEnum.NONE)
+                     }
+                     TaskStateEnum.REDIRECT_TO_EDIT_NOTES->{
+                         navigateToAddNotes(it.data)
+                         // taskViewModel.redirectionState.value=taskViewModel.redirectionState.value.copy(redirectionType = TaskStateEnum.NONE)
+                     }
+                     TaskStateEnum.NONE->{
+                         LoggerUtils.logVerbose(TAG," None Called Times")
+                     }
+
+                 }
+             }
+             /*taskViewModel.redirectionState.flowWithLifecycle(viewLifecycleOwner.lifecycle, minActiveState = Lifecycle.State.STARTED).distinctUntilChanged{
+                 old, new ->LoggerUtils.logVerbose(TAG,"${old.redirectionType.name +" "+ new.redirectionType.name}")
+                 old.redirectionType.name==new.redirectionType.name
+             }.collect {
+                 when(it.redirectionType){
+                     TaskStateEnum.REDIRECT_TO_ADD_NOTES->{
+                         LoggerUtils.logVerbose(TAG,"Called Times")
+                         navigateToAddNotes()
+                      //  taskViewModel.redirectionState.value=taskViewModel.redirectionState.value.copy(redirectionType = TaskStateEnum.NONE)
+                     }
+                     TaskStateEnum.REDIRECT_TO_EDIT_NOTES->{
+                         navigateToAddNotes(it.data)
+                        // taskViewModel.redirectionState.value=taskViewModel.redirectionState.value.copy(redirectionType = TaskStateEnum.NONE)
+                     }
+                     TaskStateEnum.NONE->{
+                         LoggerUtils.logVerbose(TAG," None Called Times")
+                     }
+
+                 }
+                 LoggerUtils.logVerbose(TAG,"Count :${taskViewModel.redirectionState.subscriptionCount.value}")
+
+             }*/
          }
+
         NoteItems(viewModel = taskViewModel)
     }
 
@@ -150,6 +205,15 @@ class TaskListFragment : Fragment() {
         CCAppBar(context = requireContext(), taskViewModel = taskViewModel, title = "Tasks"){
             requireActivity().onBackPressed()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        LoggerUtils.logVerbose(TAG,"On Destroy")
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        LoggerUtils.logVerbose(TAG,"On DestroyView")
     }
 
 }

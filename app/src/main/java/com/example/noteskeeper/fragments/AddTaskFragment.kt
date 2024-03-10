@@ -15,6 +15,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.noteskeeper.data.Task
@@ -26,7 +27,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class AddTaskFragment : Fragment() {
-    private val taskViewModel: TaskViewModel by activityViewModels ()
+    private val taskViewModel: TaskViewModel by viewModels ()
     private val args: AddTaskFragmentArgs by navArgs()
 
     override fun onCreateView(

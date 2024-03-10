@@ -2,6 +2,8 @@ package com.example.noteskeeper.viewmodel
 
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import com.example.noteskeeper.data.Task
 import com.example.noteskeeper.data.TaskDao
@@ -15,8 +17,7 @@ import com.example.noteskeeper.utils.showToast
 import com.think.searchimage.viewmodel.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -26,30 +27,58 @@ private const val TAG = "TaskViewModel"
 @HiltViewModel
 class TaskViewModel @Inject constructor(private val taskDao: TaskDao) : BaseViewModel() {
 
-    val redirectionState = mutableStateOf(RedirectionState())
+    //val redirectionState = mutableStateOf(RedirectionState())
+    //val redirectionState = MutableSharedFlow<RedirectionState>(replay = 0, extraBufferCapacity = 1)
+    //val redirectionState = MutableStateFlow(RedirectionState())
+    val redirectionState = MutableLiveData(RedirectionState())
     val sheetState = mutableStateOf(BottomSheetState())
 
     val taskList = mutableStateListOf<Task>()
     val noTaskAvailableState = mutableStateOf(false)
 
     init {
+        LoggerUtils.logVerbose("TaskListFragment","INIT with ${redirectionState.value?.redirectionType?.name}")
         getTask()
     }
 
 
+   /* private fun generate()= flow<Int> {
+        emit(100)
+        emit(200)
+    }
+
+    val data=generate().stateIn(
+        scope = viewModelScope
+    )*/
     fun onRedirectionEvents(events: RedirectEvents) {
         LoggerUtils.logVerbose(TAG, events.toString())
         when (events) {
+
             RedirectEvents.RedirectToAddNotes -> {
-                redirectionState.value =
-                    redirectionState.value.copy(redirectionType = TaskStateEnum.REDIRECT_TO_ADD_NOTES)
+
+                LoggerUtils.logVerbose("TaskListFragment","Event Add")
+                val state=RedirectionState(redirectionType = TaskStateEnum.REDIRECT_TO_ADD_NOTES)
+            redirectionState.value=(state)
+            /*redirectionState.updateAndGet {
+                    it.copy(redirectionType = TaskStateEnum.REDIRECT_TO_ADD_NOTES)
+                }*/
+                /*redirectionState.value =
+                    redirectionState.value.copy(redirectionType = TaskStateEnum.REDIRECT_TO_ADD_NOTES)*/
             }
             is RedirectEvents.RedirectToEditNotes -> {
-                redirectionState.value = redirectionState.value.copy(
-                    data = events.task,
-                    redirectionType = TaskStateEnum.REDIRECT_TO_EDIT_NOTES
-                )
+                LoggerUtils.logVerbose("TaskListFragment","Event Edit")
+              /*  val state=RedirectionState(redirectionType = TaskStateEnum.REDIRECT_TO_EDIT_NOTES)
+                redirectionState.tryEmit(state)*/
+              /*  redirectionState.updateAndGet {
+                    it.copy(redirectionType = TaskStateEnum.REDIRECT_TO_EDIT_NOTES)
+                }*/
+
+                /* redirectionState.value = redirectionState.value.copy(
+                     data = events.task,
+                     redirectionType = TaskStateEnum.REDIRECT_TO_EDIT_NOTES
+                 )*/
             }
+
         }
 
     }
@@ -116,11 +145,18 @@ class TaskViewModel @Inject constructor(private val taskDao: TaskDao) : BaseView
     }
 
     private fun getTask() {
-        taskDao.getTasks().onEach {
+        taskDao.getTasks().mapLatest {
             noTaskAvailableState.value = it.isEmpty()
             taskList.addAll(it.toSet() - taskList)
 
-        }.launchIn(viewModelScope)
+
+        }.stateIn(scope = viewModelScope, started = SharingStarted.WhileSubscribed(5000), initialValue = Unit)
+
+       /* taskDao.getTasks().onEach {
+            noTaskAvailableState.value = it.isEmpty()
+            taskList.addAll(it.toSet() - taskList)
+
+        }.launchIn(viewModelScope)*/
     }
 
     private fun addTask(task: Task) {
@@ -154,4 +190,10 @@ class TaskViewModel @Inject constructor(private val taskDao: TaskDao) : BaseView
         }
     }
 
+
+    override fun onCleared() {
+        super.onCleared()
+
+        LoggerUtils.logVerbose("TaskListFragment","On Cleared Called")
+    }
 }
