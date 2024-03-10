@@ -1,6 +1,7 @@
 package com.example.noteskeeper.views
 
 import android.app.DatePickerDialog
+import android.nfc.Tag
 import android.widget.DatePicker
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -381,6 +382,14 @@ fun AddNotePrev() {
     //AddNotes(viewModel = TaskViewModel(TaskDao))
 }
 
+private fun addedSomeFeatures1(){
+    LoggerUtils.logVerbose(TAG,"Added feature 1")
+
+}
+private fun addedSomeFeatures2(){
+    LoggerUtils.logVerbose(TAG,"Added feature 2")
+
+}
 private fun someFeaturesInMaster(){
     LoggerUtils.logVerbose(TAG,"Some Features in master")
 }
