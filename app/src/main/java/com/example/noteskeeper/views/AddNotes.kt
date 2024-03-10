@@ -381,3 +381,6 @@ fun AddNotePrev() {
     //AddNotes(viewModel = TaskViewModel(TaskDao))
 }
 
+private fun someFeaturesInMaster(){
+    LoggerUtils.logVerbose(TAG,"Some Features in master")
+}
